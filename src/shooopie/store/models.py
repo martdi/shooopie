@@ -7,6 +7,10 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+class SiteConfig(models.Model):
+    title = models.CharField(max_length=255)
+    tagline = models.CharField(max_length=255, null=True, blank=True)
+
 class ProductQueryset(models.QuerySet):
     def by_status(self, status_id):
         return self.filter(status_id=status_id)

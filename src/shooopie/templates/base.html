@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{site.title}}{%if page.title%} - {{page.title }}{%endif%}{%endblock%}</title>
+    {%block extra_head%}{%endblock%}
+    <link rel="stylesheet" href="{{static('main.css')}}">
+</head>
+<body>
+    
+    {%block topbar%}
+    <div class="top-bar">
+        <div class="top-bar-wrapper">
+            <p>All orders are ship the same day</p>
+            <p>Does it even matter?</p>
+        </div>
+    </div>
+    {%endblock%}
+
+    {%block header%}
+    <header>
+        <div class="header-wrapper">
+            <div class='brand'>
+            {%block logo%}
+                <a href="{{url('home')}}">
+                    <img class='logo' src="{{static('logo.png')}}" alt='Logo of shooopie'>
+                </a>
+
+                {%if site.tagline%}
+                <p class="tagline">{{site.tagline}}</p>
+                {%endif%}
+            </div>
+            {%endblock%}
+            {%block menu%}
+            <nav>
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Corporate responsibility</a></li>
+                </ul>
+            </nav>
+            {%endblock%}
+        </div>
+    </header>
+    {%endblock%}
+
+    {%block  hero%}
+    <div class="hero">
+        <h1>{{page.title}}</h1>
+    </div>
+    {%endblock%}
+
+    <aside>
+    {%block sidebar%}
+    {%endblock%}
+    </aside>
+
+    <main>
+    {%block content%}
+    {%endblock%}
+    </main>
+
+    <footer>
+    {%block footer%}
+    {%endblock%}
+    </footer>
+</body>
+</html>
